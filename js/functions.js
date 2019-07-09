@@ -40,6 +40,10 @@ Game.do = (function() {
     var currentPlayerName = otherPlayerNameEl.textContent;
     Game.currentPlayer = (Game.currentPlayer === 'black') ? 'red' : 'black';
 
+    // Storing the name in local storage
+    localStorage.setItem('black', Game.currentPlayer === 'black' ? currentPlayerName : otherPlayerName);
+    localStorage.setItem('red', Game.currentPlayer === 'black' ? otherPlayerName : currentPlayerName);
+
 
     // Update the players in the UI.
     currentPlayerNameEl.classList.remove(otherPlayer);
@@ -83,12 +87,42 @@ Game.do = (function() {
     }
   }
 
+  function swapPlayers(event) {
+
+    const nameBlack = localStorage.getItem('black') || 'Player 1';
+    const nameRed = localStorage.getItem('red') || 'Player 2';
+
+    localStorage.setItem('red', nameBlack);
+    localStorage.setItem('black', nameRed);
+
+    location.reload();
+  }
+
+  function swapPlayersConfirm(event) {
+    const really = confirm('Really?');
+    if (really) {
+      swapPlayers(event);
+    }
+  }
+
+  function reset(event) {
+    const really = confirm('Really?');
+
+    if (really) {
+      localStorage.clear();
+      location.reload();
+    }
+  }
+
   return {
     addDiscToBoard,
     printBoard,
     changePlayer,
     dropToBottom,
-    handleNameChange
+    handleNameChange,
+    swapPlayers,
+    reset,
+    swapPlayersConfirm,
   };
 })();
 
