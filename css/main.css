@@ -7,7 +7,7 @@ body {
 .title {
   font-size: 2rem;
 }
-@media (max-width: 460px) {
+@media (max-width: 594px) {
   .title {
     font-size: 1.66rem;
   }
@@ -15,13 +15,17 @@ body {
 
 .wrapper {
   margin: 50px auto 0;
-  width: 450px;
+  width: 594px;
 }
-@media (max-width: 460px) {
+@media (max-width: 594px) {
   .wrapper {
-    margin: 20px auto 0;
-    width: 240px;
+    margin: 0 auto;
+    width: 100vw;
   }
+}
+
+.board {
+  margin: 0 auto;
 }
 
 .keyboard-friendly {
@@ -64,10 +68,10 @@ body {
   background: #000;
   background: linear-gradient(to bottom, #333 0%,#000000 100%);
 }
-@media (max-width: 460px) {
+@media (max-width: 594px) {
   .board button {
-    width: 30px;
-    height: 30px;
+    width: 9vw;
+    height: 9vw;
   }
 }
 
@@ -103,7 +107,7 @@ body {
   margin-bottom: 2rem;
   font-size: 1rem;
 }
-@media (max-width: 460px) {
+@media (max-width: 594px) {
   .top-text {
     font-size: 0.66rem;
   }
@@ -129,6 +133,21 @@ body {
   top: 8px;
   border-radius: 50%;
 }
+
+@media (max-width: 594px) {
+  .primary .red::after,
+  .primary .black::after {
+    display: block;
+    width: 16px;
+    height: 16px;
+    content: "";
+    position: absolute;
+    right: 2px;
+    top: 2px;
+    border-radius: 50%;
+  }
+}
+
 .primary [contenteditable="true"] {
   border-bottom: 1px solid black;
   padding: 0 1.25em 0 0.25em;

@@ -1,6 +1,6 @@
-# Connect Four
+# Connect Five
 
-An implementation of Connect Four in Javascript.
+An implementation of Connect Five in Javascript.
 
-**Play: [http://bryanbraun.github.io/connect-four](http://bryanbraun.github.io/connect-four)**
+**Play: [http://christiangaertner.github.io/connect-five](http://christiangaertner.github.io/connect-five)**
 
